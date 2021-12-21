@@ -1,0 +1,14 @@
+.main {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.tiktuks {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: calc(50% - 25px);
+  flex-shrink: 1;
+  justify-content: center;
+  gap: 50px;
+}
