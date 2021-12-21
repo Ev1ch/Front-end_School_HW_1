@@ -1,11 +1,11 @@
 import React from 'react';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 import { Avatar, Hashtag } from 'components';
 import { IAuthorMeta, IHashtag, IMusicMeta } from 'types/tiktuk';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faCompactDisc } from '@fortawesome/free-solid-svg-icons';
-import styles from './information.module.scss';
 import { Routes } from 'common';
+import styles from './information.module.scss';
 
 interface IInfromationProps {
   description: {
@@ -16,11 +16,11 @@ interface IInfromationProps {
   music: IMusicMeta;
 }
 
-const Information = ({ description, author, music }: IInfromationProps) => {
-  const history = useHistory();
+const Information = function Information({ description, author, music }: IInfromationProps) {
+  const navigate = useNavigate();
 
   const onAuthorClick = () => {
-    history.push(Routes.USERS(author.name));
+    navigate(Routes.USERS(author.name));
   };
 
   return (
@@ -28,10 +28,10 @@ const Information = ({ description, author, music }: IInfromationProps) => {
       <Avatar image={author.avatar} className={styles.authorAvatar} onClick={onAuthorClick} />
       <div>
         <div className={styles.author}>
-          <p className={styles.nick} onClick={onAuthorClick}>
+          <p className={styles.nick} onClick={onAuthorClick} role="link" tabIndex={0}>
             {author.nickName}
           </p>
-          <p className={styles.name} onClick={onAuthorClick}>
+          <p className={styles.name} onClick={onAuthorClick} role="link" tabIndex={0}>
             {author.name}
           </p>
           {author.signature && <FontAwesomeIcon icon={faCheck} className={styles.icon} />}
