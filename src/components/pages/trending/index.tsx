@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header, TikTuk } from 'components';
+import { Header, TikTukPost } from 'components';
 import { ITikTuk } from 'types/tiktuk';
 import styles from './trending.module.scss';
 
@@ -13,11 +13,13 @@ const TrendingPage = function TrendingPage({ tiktuks }: ITrendingPageProps) {
       <Header />
       <main className={styles.main}>
         <div className="container">
-          <div className={styles.tiktuks}>
+          <ul className={styles.tiktuks}>
             {tiktuks.map((tiktuk: ITikTuk) => (
-              <TikTuk tiktuk={tiktuk} key={tiktuk.id} />
+              <li>
+                <TikTukPost tiktuk={tiktuk} key={tiktuk.id} />
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </main>
     </div>

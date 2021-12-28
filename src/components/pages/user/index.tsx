@@ -21,11 +21,13 @@ const UserPage = function UserPage({ information, feed }: IUserProps) {
             stats={information.stats}
             className={styles.information}
           />
-          <div className={styles.feed}>
+          <ul className={styles.feed}>
             {feed.map((tiktuk) => (
-              <MinifiedTikTuk tiktuk={tiktuk} key={tiktuk.id} />
+              <li>
+                <MinifiedTikTuk tiktuk={tiktuk} key={tiktuk.id} />
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </main>
     </div>

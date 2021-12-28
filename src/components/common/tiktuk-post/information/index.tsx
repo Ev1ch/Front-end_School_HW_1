@@ -58,11 +58,13 @@ const Information = function Information({
         </div>
         <div className={styles.description}>
           <p className={styles.text}>{description.text}</p>
-          <div className={styles.hashtags}>
+          <ul className={styles.hashtags}>
             {description.hashtags.map((hashtag) => (
-              <Hashtag hashtag={hashtag} key={hashtag.id} />
+              <li>
+                <Hashtag hashtag={hashtag} key={hashtag.id} />
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
         <div className={styles.music}>
           <p className={styles.description}>

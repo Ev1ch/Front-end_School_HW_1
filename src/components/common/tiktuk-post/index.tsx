@@ -4,14 +4,14 @@ import clsx from 'clsx';
 import Information from './information';
 import Video from './video';
 import Panel from './panel';
-import styles from './tiktuk.module.scss';
+import styles from './tiktuk-post.module.scss';
 
 interface IVideoProps {
   tiktuk: ITikTuk;
   className?: string;
 }
 
-const TikTuk = function TikTuk({ tiktuk, className }: IVideoProps) {
+const TikTukPost = function TikTukPost({ tiktuk, className }: IVideoProps) {
   return (
     <div className={clsx(styles.tiktuk, className)}>
       <div className={styles.information}>
@@ -35,4 +35,4 @@ const TikTuk = function TikTuk({ tiktuk, className }: IVideoProps) {
   );
 };
 
-export default TikTuk;
+export default TikTukPost;
