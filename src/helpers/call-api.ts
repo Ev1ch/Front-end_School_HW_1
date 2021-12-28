@@ -21,14 +21,12 @@ interface IRequestInit {
   body?: FormData | string;
 }
 
-const getQuery = (query: IQuery) =>
-  Object.keys(query).reduce(
-    (string, key, index) => `${string}${index === 0 ? '?' : '&'}${key}=${query[key]}`,
-    '',
-  );
+const getQuery = (query: IQuery) => Object.keys(query).reduce(
+  (string, key, index) => `${string}${index === 0 ? '?' : '&'}${key}=${query[key]}`,
+  '',
+);
 
-const getUrl = ({ endpoint, query }: IRequestArgs): RequestInfo =>
-  API_ROOT + endpoint + (query ? getQuery(query) : '');
+const getUrl = ({ endpoint, query }: IRequestArgs): RequestInfo => API_ROOT + endpoint + (query ? getQuery(query) : '');
 
 const getArgs = (args: IRequestArgs): RequestInit => {
   const headers: THeader = {};

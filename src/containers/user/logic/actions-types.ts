@@ -1,4 +1,3 @@
-import IRootState from 'store/state';
 import { IUserFeedState, IUserInformationState } from './state';
 
 export const GET_USER = 'USER:GET_USER';

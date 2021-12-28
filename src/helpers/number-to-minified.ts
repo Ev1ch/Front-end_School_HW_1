@@ -40,9 +40,9 @@ const convertToMinifiedNumber = (number: number) => {
     const dividedNumber = number / currentStage.DIVIDER;
 
     if (number < currentStage.MAXIMUM) {
-      convertedNumber = `${isInteger(dividedNumber) ? dividedNumber : dividedNumber.toFixed(1)} ${
-        currentStage.POSTFIX
-      }`;
+      convertedNumber = `${
+        isInteger(dividedNumber) ? dividedNumber : dividedNumber.toFixed(1)
+      } ${currentStage.POSTFIX}`;
       return convertedNumber;
     }
 

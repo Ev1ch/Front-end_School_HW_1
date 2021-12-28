@@ -1,7 +1,6 @@
 import React from 'react';
-import { ITikTuk } from 'types/tiktuk';
 import { IUser } from 'types/user';
-import { IFeed, IFeedTikTuk } from 'types/feed';
+import { IFeedTikTuk } from 'types/feed';
 import { Header, MinifiedTikTuk } from 'components';
 import Information from './information';
 import styles from './user.module.scss';

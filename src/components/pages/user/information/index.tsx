@@ -11,7 +11,11 @@ interface IInformationProps {
   className?: string;
 }
 
-const Information = function Information({ user, stats, className }: IInformationProps) {
+const Information = function Information({
+  user,
+  stats,
+  className,
+}: IInformationProps) {
   const followingCaption = convertToMinifiedNumber(stats.followingCount);
   const followersCaption = convertToMinifiedNumber(stats.followerCount);
   const likesCaption = convertToMinifiedNumber(stats.diggCount);

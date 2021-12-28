@@ -16,7 +16,11 @@ interface IInfromationProps {
   music: IMusicMeta;
 }
 
-const Information = function Information({ description, author, music }: IInfromationProps) {
+const Information = function Information({
+  description,
+  author,
+  music,
+}: IInfromationProps) {
   const navigate = useNavigate();
 
   const onAuthorClick = () => {
@@ -25,16 +29,32 @@ const Information = function Information({ description, author, music }: IInfrom
 
   return (
     <div className={styles.information}>
-      <Avatar image={author.avatar} className={styles.authorAvatar} onClick={onAuthorClick} />
+      <Avatar
+        image={author.avatar}
+        className={styles.authorAvatar}
+        onClick={onAuthorClick}
+      />
       <div>
         <div className={styles.author}>
-          <p className={styles.nick} onClick={onAuthorClick} role="link" tabIndex={0}>
+          <p
+            className={styles.nick}
+            onClick={onAuthorClick}
+            role="link"
+            tabIndex={0}
+          >
             {author.nickName}
           </p>
-          <p className={styles.name} onClick={onAuthorClick} role="link" tabIndex={0}>
+          <p
+            className={styles.name}
+            onClick={onAuthorClick}
+            role="link"
+            tabIndex={0}
+          >
             {author.name}
           </p>
-          {author.signature && <FontAwesomeIcon icon={faCheck} className={styles.icon} />}
+          {author.signature && (
+            <FontAwesomeIcon icon={faCheck} className={styles.icon} />
+          )}
         </div>
         <div className={styles.description}>
           <p className={styles.text}>{description.text}</p>

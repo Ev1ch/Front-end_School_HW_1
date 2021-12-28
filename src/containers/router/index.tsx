@@ -1,5 +1,10 @@
 import React from 'react';
-import { BrowserRouter, Routes as Switch, Route, Navigate } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Routes as Switch,
+  Route,
+  Navigate,
+} from 'react-router-dom';
 import { TrendingContainer, UserContainer } from 'containers';
 import { Routes } from 'common';
 

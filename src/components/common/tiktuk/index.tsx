@@ -25,7 +25,11 @@ const TikTuk = function TikTuk({ tiktuk, className }: IVideoProps) {
         <Video video={tiktuk.videoUrl} />
       </div>
       <div className={styles.panel}>
-        <Panel likes={tiktuk.diggCount} comments={tiktuk.commentCount} shares={tiktuk.shareCount} />
+        <Panel
+          likes={tiktuk.diggCount}
+          comments={tiktuk.commentCount}
+          shares={tiktuk.shareCount}
+        />
       </div>
     </div>
   );

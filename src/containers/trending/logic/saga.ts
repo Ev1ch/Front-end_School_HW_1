@@ -1,10 +1,14 @@
-import { all, takeEvery, call, put, select } from 'redux-saga/effects';
+import {
+  all, takeEvery, call, put, select,
+} from 'redux-saga/effects';
 import { TikTuksService } from 'services';
 import { ITikTuk } from 'types/tiktuk';
 import * as actionsTypes from './actions-types';
 import * as actions from './actions';
 
-function* getTrandingWorker({ payload: { toSet } }: ReturnType<typeof actions.getTrending>) {
+function* getTrandingWorker({
+  payload: { toSet },
+}: ReturnType<typeof actions.getTrending>) {
   try {
     yield put(actions.setLoading({ isLoading: true }));
 
