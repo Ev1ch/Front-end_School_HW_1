@@ -1,32 +1,15 @@
 import { API_ROOT, HttpMethods } from 'common';
+import { IQuery, IRequestArgs, THeader, TBody, IRequestInit } from './types';
 
-type TBody = any;
+const getQuery = (query: IQuery) =>
+  Object.keys(query).reduce(
+    (string, key, index) =>
+      `${string}${index === 0 ? '?' : '&'}${key}=${query[key]}`,
+    '',
+  );
 
-type THeader = Headers | string[][] | Record<string, string> | undefined;
-
-type IQuery = {
-  [key: string]: string | number;
-};
-
-interface IRequestArgs {
-  endpoint: string;
-  method?: string;
-  query?: IQuery;
-  body?: TBody;
-}
-
-interface IRequestInit {
-  method: string;
-  headers: THeader;
-  body?: FormData | string;
-}
-
-const getQuery = (query: IQuery) => Object.keys(query).reduce(
-  (string, key, index) => `${string}${index === 0 ? '?' : '&'}${key}=${query[key]}`,
-  '',
-);
-
-const getUrl = ({ endpoint, query }: IRequestArgs): RequestInfo => API_ROOT + endpoint + (query ? getQuery(query) : '');
+const getUrl = ({ endpoint, query }: IRequestArgs): RequestInfo =>
+  API_ROOT + endpoint + (query ? getQuery(query) : '');
 
 const getArgs = (args: IRequestArgs): RequestInit => {
   const headers: THeader = {};
@@ -54,6 +37,7 @@ const getArgs = (args: IRequestArgs): RequestInit => {
   } as IRequestInit;
 };
 
-const callApi = async (args: IRequestArgs): Promise<Response> => fetch(getUrl(args), getArgs(args));
+const callApi = async (args: IRequestArgs): Promise<Response> =>
+  fetch(getUrl(args), getArgs(args));
 
 export default callApi;
