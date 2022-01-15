@@ -37,7 +37,7 @@ const getArgs = (args: IRequestArgs): RequestInit => {
   } as IRequestInit;
 };
 
-const callApi = async (args: IRequestArgs): Promise<Response> =>
+const callApi = (args: IRequestArgs): Promise<Response> =>
   fetch(getUrl(args), getArgs(args));
 
 export default callApi;
