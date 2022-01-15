@@ -9,7 +9,7 @@ export type TRequestArgs =
       endpoint: string;
       method?: 'GET';
       query?: IQuery;
-      body: never;
+      body?: never;
     }
   | {
       endpoint: string;

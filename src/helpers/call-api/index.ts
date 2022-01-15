@@ -1,15 +1,17 @@
 import { API_ROOT, HttpMethods } from 'common';
-import { IQuery, TRequestArgs, THeader, TBody, IRequestInit } from './types';
+import { TRequestArgs, THeader, TBody, IRequestInit } from './types';
 
-const getQuery = (query: IQuery) =>
-  Object.keys(query).reduce(
-    (string, key, index) =>
-      `${string}${index === 0 ? '?' : '&'}${key}=${query[key]}`,
-    '',
-  );
+const getUrl = ({ endpoint, query }: TRequestArgs): URL => {
+  const url = new URL(endpoint, API_ROOT);
 
-const getUrl = ({ endpoint, query }: TRequestArgs): RequestInfo =>
-  API_ROOT + endpoint + (query ? getQuery(query) : '');
+  if (query) {
+    Object.keys(query).forEach((key) => {
+      url.searchParams.append(key, String(query[key]));
+    });
+  }
+
+  return url;
+};
 
 const getArgs = (args: TRequestArgs): RequestInit => {
   const headers: THeader = {};
@@ -36,7 +38,7 @@ const getArgs = (args: TRequestArgs): RequestInit => {
   } as IRequestInit;
 };
 
-const callApi = (args: TRequestArgs): Promise<Response> =>
-  fetch(getUrl(args), getArgs(args));
+const callApi = <T>(args: TRequestArgs): Promise<T> =>
+  fetch(getUrl(args).href, getArgs(args)).then((response) => response.json());
 
 export default callApi;
