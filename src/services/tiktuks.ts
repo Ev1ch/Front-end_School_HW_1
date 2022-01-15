@@ -8,12 +8,12 @@ class TikTuksService {
   }: {
     limit: number;
   }): Promise<ITikTuk[]> {
-    const tiktuks: ITikTuk[] = await callApi({
+    const response = await callApi<ITikTuk[]>({
       endpoint: ApiRoutes.FEED,
       query: { limit },
-    }).then((response) => response.json());
+    });
 
-    return tiktuks;
+    return response;
   }
 }
 
