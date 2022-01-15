@@ -1,4 +1,4 @@
-import { IUserFeedState, IUserInformationState } from './state';
+import { IUserFeedState, IUserInformationState } from './types';
 
 export const GET_USER = 'USER:GET_USER';
 export const SET_USER = 'USER:SET_USER';
