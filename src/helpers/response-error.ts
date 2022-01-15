@@ -1,22 +1,9 @@
-class ResponseError {
-  private message: string;
-
-  private status: number;
-
-  constructor(message: string, status = 200) {
-    this.message = message;
-    this.status = status;
+class ResponseError extends Error {
+  constructor(public message: string, public status: number = 400) {
+    super();
   }
 
-  getMessage() {
-    return this.message;
-  }
-
-  getStatus() {
-    return this.status;
-  }
-
-  toString() {
+  toString(): string {
     return this.message;
   }
 }
