@@ -16,7 +16,7 @@ const Button = function Button({
   text,
   className,
   onClick,
-}: IButtonProps) {
+}: IButtonProps): JSX.Element {
   const onClickHandler = (event: MouseEvent<HTMLButtonElement>) => {
     if (onClick) {
       onClick(event);

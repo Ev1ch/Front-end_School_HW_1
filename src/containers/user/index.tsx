@@ -5,7 +5,7 @@ import { useAppDispatch } from 'store';
 import { useUserSelector } from './logic';
 import * as actions from './logic/actions';
 
-const UserContainer = function UserContainer() {
+const UserContainer = function UserContainer(): JSX.Element {
   const dispatch = useAppDispatch();
   const { nick } = useParams<{ nick: string }>();
   const {

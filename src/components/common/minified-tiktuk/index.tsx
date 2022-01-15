@@ -9,7 +9,9 @@ interface IMinifiedTikTuk {
   tiktuk: IFeedTikTuk;
 }
 
-const MinifiedTikTuk = function MinifiedTikTuk({ tiktuk }: IMinifiedTikTuk) {
+const MinifiedTikTuk = function MinifiedTikTuk({
+  tiktuk,
+}: IMinifiedTikTuk): JSX.Element {
   const viewsCaption = convertToMinifiedNumber(tiktuk.stats.playCount);
 
   return (

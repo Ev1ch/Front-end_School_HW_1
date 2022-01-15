@@ -10,7 +10,11 @@ interface IPanelProps {
   shares: number;
 }
 
-const Panel = function Panel({ likes, comments, shares }: IPanelProps) {
+const Panel = function Panel({
+  likes,
+  comments,
+  shares,
+}: IPanelProps): JSX.Element {
   const likesCaption = convertToMinifiedNumber(likes);
   const commentsCaption = convertToMinifiedNumber(comments);
   const sharesCaption = convertToMinifiedNumber(shares);

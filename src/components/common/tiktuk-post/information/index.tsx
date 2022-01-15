@@ -20,7 +20,7 @@ const Information = function Information({
   description,
   author,
   music,
-}: IInfromationProps) {
+}: IInfromationProps): JSX.Element {
   const navigate = useNavigate();
 
   const onAuthorClick = () => {

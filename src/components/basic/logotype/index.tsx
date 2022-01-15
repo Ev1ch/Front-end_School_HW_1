@@ -6,7 +6,7 @@ interface ILogotypeProps {
   className?: string;
 }
 
-const Logotype = function Logotype({ className }: ILogotypeProps) {
+const Logotype = function Logotype({ className }: ILogotypeProps): JSX.Element {
   return <p className={clsx(styles.logotype, className)}>Tik Tuk</p>;
 };
 

@@ -5,7 +5,7 @@ import { Logotype } from 'components';
 import { Routes } from 'common';
 import styles from './header.module.scss';
 
-const Header = function Header() {
+const Header = function Header(): JSX.Element {
   const navigate = useNavigate();
 
   const onLogoClick = () => {

@@ -1,6 +1,4 @@
-import {
-  all, takeEvery, call, put, select,
-} from 'redux-saga/effects';
+import { all, takeEvery, call, put, select } from 'redux-saga/effects';
 import { UserService } from 'services';
 import { IUser } from 'types/user';
 import { IFeed } from 'types/feed';

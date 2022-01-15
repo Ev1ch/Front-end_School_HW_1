@@ -6,7 +6,7 @@ interface ISpinnerProps {
   className?: string;
 }
 
-const Spinner = function Spinner({ className }: ISpinnerProps) {
+const Spinner = function Spinner({ className }: ISpinnerProps): JSX.Element {
   return (
     <div className={clsx(styles.spinner, className)}>
       <div />

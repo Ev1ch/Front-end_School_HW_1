@@ -5,7 +5,7 @@ interface IVideoProps {
   video: string;
 }
 
-const Video = function Video({ video }: IVideoProps) {
+const Video = function Video({ video }: IVideoProps): JSX.Element {
   return (
     <div className={styles.video}>
       <video src={video} className={styles.content} controls>

@@ -1,6 +1,4 @@
-import {
-  all, takeEvery, call, put, select,
-} from 'redux-saga/effects';
+import { all, takeEvery, call, put, select } from 'redux-saga/effects';
 import { TikTuksService } from 'services';
 import { ITikTuk } from 'types/tiktuk';
 import * as actionsTypes from './actions-types';

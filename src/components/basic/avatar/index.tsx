@@ -14,7 +14,7 @@ const Avatar = function Avatar({
   alt,
   className,
   onClick,
-}: IAvatarProps) {
+}: IAvatarProps): JSX.Element {
   const onClickHandler = (event: MouseEvent<HTMLElement>) => {
     if (onClick) {
       onClick(event);

@@ -1,3 +1,3 @@
-type TSelector<T> = (state: T) => unknown;
+type TSelector<T> = (state: T) => any;
 
 export default TSelector;
