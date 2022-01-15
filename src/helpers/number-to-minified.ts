@@ -4,16 +4,10 @@ interface IStage {
   POSTFIX: string;
 }
 
-interface IStages {
-  [key: string]: IStage;
-}
-
-const isInteger = (number: number) => number.toString().split('.').length === 1;
-
-const convertToMinifiedNumber = (number: number) => {
+const convertToMinifiedNumber = (number: number): string => {
   let convertedNumber: string = number.toFixed(1);
 
-  const Stages: IStages = {
+  const Stages: Record<string, IStage> = {
     HUNDRED: {
       MAXIMUM: 1000,
       DIVIDER: 1,
@@ -41,7 +35,9 @@ const convertToMinifiedNumber = (number: number) => {
 
     if (number < currentStage.MAXIMUM) {
       convertedNumber = `${
-        isInteger(dividedNumber) ? dividedNumber : dividedNumber.toFixed(1)
+        Number.isInteger(dividedNumber)
+          ? dividedNumber
+          : dividedNumber.toFixed(1)
       } ${currentStage.POSTFIX}`;
       return convertedNumber;
     }
