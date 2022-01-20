@@ -1,0 +1,95 @@
+@import 'styles/scss-variables';
+
+.information {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+
+  .author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &Avatar {
+      min-height: 50px;
+      min-width: 50px;
+      cursor: pointer;
+    }
+
+    .name,
+    .nick {
+      margin-top: 0;
+      margin-bottom: 0;
+      cursor: pointer;
+    }
+
+    .nick {
+      font: 700 16px var(--base-font-family);
+    }
+
+    .name {
+      font: 300 14px var(--base-font-family);
+    }
+
+    .icon {
+      transition: var(--base-time);
+
+      &:hover {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .description {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: justify;
+
+    .text {
+      margin-top: 0;
+      margin-bottom: 5px;
+      font: var(--base-font);
+      overflow-wrap: anywhere;
+    }
+
+    .hashtags {
+      margin-top: 0;
+      margin-bottom: 0;
+      display: flex;
+      padding: 0;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+  }
+
+  .music {
+    .description {
+      margin-top: 0;
+      margin-bottom: 0;
+      font: 700 12px var(--base-font-family);
+
+      .icon {
+        margin-right: 5px;
+        animation: spinning calc(var(--base-time) * 20) linear infinite;
+
+        @keyframes spinning {
+          0% {
+            transform: rotate(0);
+          }
+
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $breakpoint-sm) {
+  .information {
+    .author {
+      flex-wrap: wrap;
+    }
+  }
+}

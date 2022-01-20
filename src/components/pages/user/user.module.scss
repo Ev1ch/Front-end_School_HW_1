@@ -1,0 +1,30 @@
+@import 'styles/scss-variables';
+
+.main {
+  margin-top: 50px;
+}
+
+.information {
+  margin-bottom: 50px;
+}
+
+.feed {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 400px;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and(max-width: $breakpoint-md) {
+  .feed {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and(max-width: $breakpoint-sm) {
+  .feed {
+    grid-template-columns: 1fr;
+  }
+}
